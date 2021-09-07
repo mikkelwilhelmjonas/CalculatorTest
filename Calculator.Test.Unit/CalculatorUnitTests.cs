@@ -108,6 +108,17 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Power(exp).Equals(result));
         }
 
+        [TestCase(6, 2, 3)]
+        [TestCase(10, 5, 2)]
+        [TestCase(2, 4, 0.5)]
+        public void Divide_DivideAccumulatorNumbers_ResultIsCorrect(double firstAdd, double divisor, double result)
+        {
+            //First add a number, to make division possible
+            uut.Add(firstAdd);
+
+            Assert.That(uut.Divide(divisor).Equals(result));
+        }
+
         [TestCase(0)]
         public void DividedByZeroTest_OneParameter_ResultIsCorrect(double divisor)
         {

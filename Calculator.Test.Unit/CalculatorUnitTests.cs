@@ -114,7 +114,7 @@ namespace Calculator.Test.Unit
             Assert.Throws<DivideByZeroException>(() => uut.Divide(divisor));
         }
 
-        [TestCase(2, 1)]
+        [TestCase(2, 0)]
         [TestCase(4, 0)]
         [TestCase(8, 0)]
         public void ClearTest_ResultIsCorrect(double firstAdd, double result)
